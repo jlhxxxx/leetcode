@@ -41,7 +41,7 @@ class Solution:
         y = str(x)
         result = ''
         if y[0] == '-':
-            result = '-'+ y[:0:-1]
+            result = '-' + y[:0:-1]
         else:
             result = y[::-1]
         if int(result) < -2**31 or int(result) > 2**31-1:

@@ -24,6 +24,8 @@
 # 
 # 
 #
+
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in nums:
@@ -31,4 +33,4 @@ class Solution:
             num2 = nums[nums.index(i)+1:]
             if j in num2:
                 return [nums.index(i), num2.index(j)+nums.index(i)+1]
-
+                
