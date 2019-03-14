@@ -33,9 +33,11 @@
 # 所有输入只包含小写字母 a-z 。
 # 
 #
+from typing import List
+
 class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> st
-        if len(strs) == 0:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
             return ''
         out = '' 
         for i in range(len(strs[0])):
@@ -46,4 +48,22 @@ class Solution:
                 else:
                     return strs[0][:i]
         return out
+
+        # if not strs:
+        #     return ''
+        # if len(strs) == 1 or strs[0] == '':
+        #     return strs[0]
+
+        # count = len(strs[0])
+        # for s in strs[1:]:
+        #     if len(s) < count:
+        #         count = len(s)
+
+        # for i in range(count):
+        #     tmp = set([x[:i+1] for x in strs])
+        #     if len(tmp) > 1:
+        #         return strs[0][:i]
+        
+        # return strs[0][:count]
+
 
