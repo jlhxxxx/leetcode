@@ -27,18 +27,26 @@
 #
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        temp = out = nums[0]
-        for i in nums[1:]:
-            if temp > 0:
-                if temp + i > 0:
-                    temp += i
-                else:
-                    temp = 0
-            else:
-                temp = i
+        # temp = out = nums[0]
+        # for i in nums[1:]:
+        #     if temp > 0:
+        #         if temp + i > 0:
+        #             temp += i
+        #         else:
+        #             temp = 0
+        #     else:
+        #         temp = i
 
-            if temp > out:
-                out = temp
+        #     if temp > out:
+        #         out = temp
+        # return out
+        if not nums:
+            return 0
+        temp = out = nums[0]
+        for n in nums[1:]:
+            temp = max(n, temp+n)
+            out = max(temp, out)
         return out
+
 
         
